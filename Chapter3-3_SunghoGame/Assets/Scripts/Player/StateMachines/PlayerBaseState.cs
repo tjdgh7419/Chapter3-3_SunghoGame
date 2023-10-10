@@ -62,6 +62,11 @@ public class PlayerBaseState : IState
 			* Time.deltaTime);
 	}
 
+	protected void ForceMove()
+	{
+		stateMachine.player.Controller.Move(stateMachine.player.ForceReceiver.Movement * Time.deltaTime);
+	}
+
 	private float GetMovementSpeed()
 	{
 		// 현재 내가 설정한 기본 속도에 사용자 설정 스피드를 곱하여 이동 속도를 반환
@@ -149,6 +154,23 @@ public class PlayerBaseState : IState
 	{
 		stateMachine.player.Animator.SetBool(animationHash, false);
 	}
+	protected float GetNormalizedTime(Animator animator, string tag)
+	{
+		AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+		AnimatorStateInfo nextInfo = animator.GetNextAnimatorStateInfo(0);
 
+		if (animator.IsInTransition(0) && nextInfo.IsTag(tag))
+		{
+			return nextInfo.normalizedTime;
+		}
+		else if (!animator.IsInTransition(0) && currentInfo.IsTag(tag))
+		{
+			return currentInfo.normalizedTime;
+		}
+		else
+		{
+			return 0f;
+		}
 
+	}
 }
