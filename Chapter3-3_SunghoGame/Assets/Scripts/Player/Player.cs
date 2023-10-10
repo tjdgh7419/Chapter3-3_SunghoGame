@@ -11,4 +11,18 @@ public class Player : MonoBehaviour
     public Animator Animator { get; private set; }
     public PlayerInput Input { get; private set; } // 내가 만든 인풋액션 값을 가져옴
     public CharacterController Controller { get; private set; } // 추가한 캐릭터 컨트롤러 컴포넌트
+
+	private void Awake()
+	{
+        AnimationData.Initialize(); 
+
+        Rigidbody = GetComponent<Rigidbody>();
+        Animator = GetComponent<Animator>();
+        Input = GetComponent<PlayerInput>();  
+        Controller = GetComponent<CharacterController>();
+	}
+	private void Start()
+	{
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 }
