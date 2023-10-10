@@ -9,8 +9,8 @@ public class PlayerStateMachine : StateMachine
 
 	public PlayerIdleState idleState { get; }
 	public PlayerWalkState walkState { get; }
-	//public PlayerJumpState jumpState { get; }
-	//public PlayerFallState fallState { get; }
+	public PlayerJumpState jumpState { get; }
+	public PlayerFallState fallState { get; }
 	public PlayerRunState runState { get; }
 	//public PlayerComboAttackState comboAttackState { get; }
 	public Vector2 MovementInput { get; set; }
@@ -31,8 +31,8 @@ public class PlayerStateMachine : StateMachine
 		idleState = new PlayerIdleState(this);
 		walkState = new PlayerWalkState(this);
 		runState = new PlayerRunState(this);
-		//jumpState = new PlayerJumpState(this);
-		//fallState = new PlayerFallState(this);
+		jumpState = new PlayerJumpState(this);
+		fallState = new PlayerFallState(this);
 		//comboAttackState = new PlayerComboAttackState(this);
 		MainCameraTransform = Camera.main.transform;
 

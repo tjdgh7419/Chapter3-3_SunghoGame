@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class PlayerBaseState : IState
@@ -55,8 +56,10 @@ public class PlayerBaseState : IState
 	private void Move(Vector3 movementDirection)
 	{
 		float movementSpeed = GetMovementSpeed();
+		//이동하는 값과 ForceReceiver의 힘을 더해서 시간을 곱해준다.
 		stateMachine.player.Controller.Move(
-			(movementDirection * movementSpeed) * Time.deltaTime);
+			((movementDirection * movementSpeed) + stateMachine.player.ForceReceiver.Movement) 
+			* Time.deltaTime);
 	}
 
 	private float GetMovementSpeed()
@@ -95,18 +98,12 @@ public class PlayerBaseState : IState
 	protected virtual void AddInputActionsCallbacks()
 	{
 		PlayerInput input = stateMachine.player.Input;
-		input.PlayerActions.Move.canceled += OnMovementCanceled;
+		input.PlayerActions.Move.canceled += OnMovementCanceled; //실제로 움직이는 부분
 		input.PlayerActions.Run.started += OnRunStarted;
-	}
-
-	protected virtual void OnRunStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
-	{
+		input.PlayerActions.Jump.started += OnJumpStarted;
 		
-	}
-
-	protected virtual void OnMovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
-	{
-		
+		input.PlayerActions.Attack.performed += OnAttackPerformed;
+		input.PlayerActions.Attack.canceled += OnAttackCanceled;
 	}
 
 	protected virtual void RemoveInputActionsCallbacks()
@@ -114,7 +111,34 @@ public class PlayerBaseState : IState
 		PlayerInput input = stateMachine.player.Input;
 		input.PlayerActions.Move.canceled -= OnMovementCanceled;
 		input.PlayerActions.Run.started -= OnRunStarted;
+		input.PlayerActions.Jump.started -= OnJumpStarted;
+		input.PlayerActions.Attack.performed -= OnAttackPerformed;
+		input.PlayerActions.Attack.canceled -= OnAttackCanceled;
 	}
+
+	protected virtual void OnRunStarted(InputAction.CallbackContext context)
+	{
+		
+	}
+
+	protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
+	{
+		
+	}
+	protected virtual void OnJumpStarted(InputAction.CallbackContext context)
+	{
+
+	}
+	protected virtual void OnAttackPerformed(InputAction.CallbackContext obj)
+	{
+		stateMachine.IsAttacking = true;
+	}
+
+	protected virtual void OnAttackCanceled(InputAction.CallbackContext obj)
+	{
+		stateMachine.IsAttacking = false;
+	}
+
 
 	protected void StartAnimation(int animationHash)
 	{
@@ -125,4 +149,6 @@ public class PlayerBaseState : IState
 	{
 		stateMachine.player.Animator.SetBool(animationHash, false);
 	}
+
+
 }

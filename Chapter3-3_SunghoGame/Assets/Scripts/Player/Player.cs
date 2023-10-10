@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public Animator Animator { get; private set; }
     public PlayerInput Input { get; private set; } // 내가 만든 인풋액션 값을 가져옴
     public CharacterController Controller { get; private set; } // 추가한 캐릭터 컨트롤러 컴포넌트
-
+	public ForceReceiver ForceReceiver { get; private set; }
 	private PlayerStateMachine stateMachine;
 	private void Awake()
 	{
@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         Input = GetComponent<PlayerInput>();  
         Controller = GetComponent<CharacterController>();
 		stateMachine = new PlayerStateMachine(this);
+		ForceReceiver = GetComponent<ForceReceiver>();
 	}
 	private void Start()
 	{
