@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StateMachines
+public abstract class StateMachine
 {
     protected IState currentState;
 

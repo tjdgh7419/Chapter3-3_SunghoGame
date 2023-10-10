@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [field: Header("Animations")]
+	[field: Header("References")]
+	[field: SerializeField] public PlayerSO Data { get; private set; }
+
+	[field: Header("Animations")]
     [field: SerializeField] public PlayerAnimation AnimationData { get; private set; }
 
     public Rigidbody Rigidbody { get; private set; }
@@ -12,6 +15,7 @@ public class Player : MonoBehaviour
     public PlayerInput Input { get; private set; } // 내가 만든 인풋액션 값을 가져옴
     public CharacterController Controller { get; private set; } // 추가한 캐릭터 컨트롤러 컴포넌트
 
+	private PlayerStateMachine stateMachine;
 	private void Awake()
 	{
         AnimationData.Initialize(); 
@@ -20,6 +24,7 @@ public class Player : MonoBehaviour
         Animator = GetComponent<Animator>();
         Input = GetComponent<PlayerInput>();  
         Controller = GetComponent<CharacterController>();
+		stateMachine = new PlayerStateMachine(this);
 	}
 	private void Start()
 	{
