@@ -94,11 +94,26 @@ public class PlayerBaseState : IState
 
 	protected virtual void AddInputActionsCallbacks()
 	{
-
+		PlayerInput input = stateMachine.player.Input;
+		input.PlayerActions.Move.canceled += OnMovementCanceled;
+		input.PlayerActions.Run.started += OnRunStarted;
 	}
+
+	protected virtual void OnRunStarted(UnityEngine.InputSystem.InputAction.CallbackContext context)
+	{
+		
+	}
+
+	protected virtual void OnMovementCanceled(UnityEngine.InputSystem.InputAction.CallbackContext context)
+	{
+		
+	}
+
 	protected virtual void RemoveInputActionsCallbacks()
 	{
-
+		PlayerInput input = stateMachine.player.Input;
+		input.PlayerActions.Move.canceled -= OnMovementCanceled;
+		input.PlayerActions.Run.started -= OnRunStarted;
 	}
 
 	protected void StartAnimation(int animationHash)

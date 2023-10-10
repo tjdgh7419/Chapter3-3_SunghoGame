@@ -8,10 +8,10 @@ public class PlayerStateMachine : StateMachine
 	public Player player { get; }
 
 	public PlayerIdleState idleState { get; }
-	//public PlayerWalkState walkState { get; }
+	public PlayerWalkState walkState { get; }
 	//public PlayerJumpState jumpState { get; }
 	//public PlayerFallState fallState { get; }
-	//public PlayerRunState runState { get; }
+	public PlayerRunState runState { get; }
 	//public PlayerComboAttackState comboAttackState { get; }
 	public Vector2 MovementInput { get; set; }
 	public float MovementSpeed { get; private set; }
@@ -29,8 +29,8 @@ public class PlayerStateMachine : StateMachine
 		this.player = player;
 
 		idleState = new PlayerIdleState(this);
-		//walkState = new PlayerWalkState(this);
-		//runState = new PlayerRunState(this);
+		walkState = new PlayerWalkState(this);
+		runState = new PlayerRunState(this);
 		//jumpState = new PlayerJumpState(this);
 		//fallState = new PlayerFallState(this);
 		//comboAttackState = new PlayerComboAttackState(this);

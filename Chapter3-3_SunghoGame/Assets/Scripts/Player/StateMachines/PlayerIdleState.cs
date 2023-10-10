@@ -24,10 +24,10 @@ public class PlayerIdleState : PlayerGroundState
 	{
 		base.Update();
 
-		//if (stateMachine.MovementInput != Vector2.zero)
-		//{
-		//	OnMove();
-		//	return;
-		//}
+		if (stateMachine.MovementInput != Vector2.zero)
+		{
+			OnMove();
+			return;
+		}
 	}
 }
