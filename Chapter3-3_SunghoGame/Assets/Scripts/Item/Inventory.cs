@@ -61,12 +61,28 @@ public class Inventory : MonoBehaviour
 	{
 		if (inventoryWindow.activeInHierarchy)
 		{
+			OffUI();	
 			inventoryWindow.SetActive(false);		
 		}
 		else
 		{
+			OnUI();
 			inventoryWindow.SetActive(true);		
 		}
+	}
+
+	public void OnUI()
+	{
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+		input.PlayerActions.Attack.Disable();
+	}
+
+	public void OffUI()
+	{
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+		input.PlayerActions.Attack.Enable();
 	}
 
 	public void AddItem(ItemData item)

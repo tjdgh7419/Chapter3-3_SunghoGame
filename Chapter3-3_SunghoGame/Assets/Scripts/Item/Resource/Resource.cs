@@ -14,8 +14,7 @@ public class Resource : MonoBehaviour
 	{
 		
 		for (int i = 0; i < quantityPerHit; i++)
-		{
-			Debug.Log("게더 진입");
+		{	
 			if (capacity <= 0)
 			{
 				break;
@@ -25,10 +24,9 @@ public class Resource : MonoBehaviour
 			GameManager.Instance.inventory.AddItem(itemToGive);	
 		}
 
-		//if (capacity <= 0)
-		//{
-		//	gameObject.SetActive(false);		
-		//}
-
+		if (capacity <= 0)
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }

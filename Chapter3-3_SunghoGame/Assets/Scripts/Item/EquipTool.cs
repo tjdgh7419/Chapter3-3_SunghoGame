@@ -15,14 +15,4 @@ public class EquipTool : Equip
 			resource.Gather();
 		}
 	}
-
-	//private void OnCollisionExit(Collision collision)
-	//{
-	//	if(collision.gameObject.tag == "Resource")
-	//	{
-	//		Debug.Log("Ãæµ¹");
-	//		Resource resource = collision.gameObject.GetComponent<Resource>();
-	//		resource.Gather();
-	//	}
-	//}
 }
