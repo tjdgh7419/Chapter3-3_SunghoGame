@@ -68,10 +68,10 @@ public class InteractionManager : MonoBehaviour
 	{
 		if (callbackContext.phase == InputActionPhase.Started && curInteractable != null)
 		{
+			promptText.gameObject.SetActive(false);
 			curInteractable.OnInteract();
 			curInteractGameObject = null;
-			curInteractable = null;
-			promptText.gameObject.SetActive(false);
+			curInteractable = null;			
 		}
 	}
 }

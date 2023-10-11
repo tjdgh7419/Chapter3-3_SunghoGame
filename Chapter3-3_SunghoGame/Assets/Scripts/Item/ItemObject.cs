@@ -13,6 +13,21 @@ public class ItemObject : MonoBehaviour, IInteractable
 
 	public void OnInteract()
 	{
-		UI.SetActive(true);
+		if (UI.activeInHierarchy)
+		{
+			GameManager.Instance.inventory.OffUI();
+			UI.SetActive(false);
+		}
+		else
+		{
+			GameManager.Instance.inventory.OnUI();
+			UI.SetActive(true);
+		}
+	}
+
+	public void ExitBtn()
+	{
+		GameManager.Instance.inventory.OffUI();
+		UI.SetActive(false);
 	}
 }
