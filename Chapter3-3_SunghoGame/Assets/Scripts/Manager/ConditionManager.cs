@@ -58,6 +58,7 @@ public class ConditionManager : MonoBehaviour
 
         if (Health.IsZero())
         {
+            GameManager.Instance.inventory.OnUI();
             SceneManager.LoadScene("GameOverScene");
         }
     }
