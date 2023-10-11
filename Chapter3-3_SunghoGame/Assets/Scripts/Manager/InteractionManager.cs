@@ -21,14 +21,14 @@ public class InteractionManager : MonoBehaviour
 
 	public TextMeshProUGUI promptText;
 	public Camera camera;
-	private PlayerInput input;
 	private void Awake()
 	{
-
+		
 	}
 	private void Start()
 	{
-		
+		GameManager.Instance.input.PlayerActions.Interact.started += OnInteractInput;
+		// Awake에 넣을 시 게임매니저의 실행 순서보다 낮을 수 있어서 되도록이면 Start에 넣어야한다.
 	}
 
 	void Update()
