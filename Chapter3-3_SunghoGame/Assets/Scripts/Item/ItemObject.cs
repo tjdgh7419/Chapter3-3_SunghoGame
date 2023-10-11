@@ -8,7 +8,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 	public GameObject UI;
 	public string GetInteractPrompt()
 	{
-		return string.Format("Click {0}", item.itemName);
+		return string.Format("{0}", item.itemName);
 	}
 
 	public void OnInteract()

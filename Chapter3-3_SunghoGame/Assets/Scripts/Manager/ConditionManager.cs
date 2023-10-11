@@ -44,6 +44,7 @@ public class ConditionManager : MonoBehaviour
     {
         Health.Initialize();
         Hunger.Initialize();
+        GameManager.Instance.conditionManager = this;
     }
 
     void Update()
