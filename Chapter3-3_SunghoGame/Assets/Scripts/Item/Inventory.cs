@@ -23,19 +23,20 @@ public class Inventory : MonoBehaviour
 	private int selectedItemIndex;
 	public TextMeshProUGUI selectedItemName;
 	public TextMeshProUGUI selectedItemDescription;
-	//public GameObject useButton;
-	//public GameObject dropButton;
-
-	public PlayerInput input;
+	public GameObject useButton;
+	public GameObject dropButton;
+	private PlayerInput input;
 	private Dictionary<ItemData, int> ItemTotalCount;
 	private void Awake()
 	{
+		input = GameManager.Instance.input;
 		input.PlayerActions.Inventory.started += OnInventoryButton;
 		ItemTotalCount = new Dictionary<ItemData, int>();
 	}
 
 	private void Start()
 	{
+		
 		GameManager.Instance.inventory = this;
 		inventoryWindow.SetActive(false);
 
@@ -152,6 +153,9 @@ public class Inventory : MonoBehaviour
 
 		selectedItemName.text = selectedItem.item.itemName;
 		selectedItemDescription.text = selectedItem.item.description;
+
+		useButton.SetActive(selectedItem.item.type == ItemType.Consumable);
+		dropButton.SetActive(true);
 	}
 	private void ClearSelectedItemWindow()
 	{
@@ -159,13 +163,23 @@ public class Inventory : MonoBehaviour
 		selectedItemName.text = string.Empty;
 		selectedItemDescription.text = string.Empty;
 
-		//dropButton.SetActive(false);
-		//useButton.SetActive(false);		
+		dropButton.SetActive(false);
+		useButton.SetActive(false);		
+	}
+	public void OnDropButton()
+	{
+		RemoveSelectedItem();
 	}
 
 	private void RemoveSelectedItem() //use
 	{
 		selectedItem.quantity--;
+
+		if (selectedItem.quantity <= 0)
+		{
+			selectedItem.item = null;
+			ClearSelectedItemWindow();
+		}
 		UpdateUI();
 	}
 }

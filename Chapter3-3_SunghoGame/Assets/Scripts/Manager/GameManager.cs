@@ -10,9 +10,7 @@ public class GameManager : MonoBehaviour
 	public ConditionManager conditionManager;
 	public UIManager uiManager;
 	public Inventory inventory;
-
-	
-
+	public PlayerInput input;
 	private void Awake()
 	{
 		if(Instance != null && Instance != this)
