@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785ca89928c006543844b1e9f8e88f07, type: 3}
   m_Name: Maker
   m_EditorClassIdentifier: 
-  itemName: Maker
+  itemName: "\uC81C\uC791\uB300"
   description: 
   type: 0
   icon: {fileID: 0}

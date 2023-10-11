@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785ca89928c006543844b1e9f8e88f07, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  itemName: Tree
-  description: is Tree
+  itemName: "\uB098\uBB34"
+  description: "\uB2E8\uB2E8\uD55C \uB098\uBB34\uC785\uB2C8\uB2E4."
   type: 0
   icon: {fileID: 21300000, guid: 79f0b93fa20863f45a5520bb2a214c9b, type: 3}
   canStack: 1
