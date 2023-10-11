@@ -86,6 +86,27 @@ public class Inventory : MonoBehaviour
 		input.PlayerActions.Attack.Enable();
 	}
 
+	public void OnUseButton()
+	{
+		if (selectedItem.item.type == ItemType.Consumable)
+		{
+			for (int i = 0; i < selectedItem.item.consumables.Length; i++)
+			{
+				switch (selectedItem.item.consumables[i].type)
+				{
+					case ConsumableType.Hunger:
+						GameManager.Instance.conditionManager.Hunger.Change(selectedItem.item.consumables[i].value);
+					 
+						break;
+					case ConsumableType.Health:
+						GameManager.Instance.conditionManager.Health.Change(selectedItem.item.consumables[i].value);					
+						break;
+				}		
+			}
+		}
+		RemoveSelectedItem();
+	}
+
 	public void AddItem(ItemData item)
 	{
 		if (item.canStack)

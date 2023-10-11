@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [Serializable]
@@ -56,7 +57,7 @@ public class ConditionManager : MonoBehaviour
 
         if (Health.IsZero())
         {
-            Debug.Log("Game Over");
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 

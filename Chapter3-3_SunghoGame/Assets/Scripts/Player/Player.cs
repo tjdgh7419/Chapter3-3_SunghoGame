@@ -46,4 +46,14 @@ public class Player : MonoBehaviour
 		stateMachine.PhysicsUpdate();
 	}
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "mushroom")
+		{
+			Resource resource = other.gameObject.GetComponent<Resource>();		
+			GameManager.Instance.inventory.AddItem(resource.itemToGive);
+			other.gameObject.SetActive(false);
+		}
+	}
+
 }
