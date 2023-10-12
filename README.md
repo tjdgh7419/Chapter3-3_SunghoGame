@@ -28,6 +28,7 @@ URL : [011 - 무정무계획팀 노션 (notion.site)](https://teamsparta.notion.
 
 ### 2. 플레이어 컨디션
 플레이어는 체력과 배고픔을 가지고 있습니다. 
+
 배고픔은 실시간으로 감소하고 0이 될 시 체력이 감소하게 됩니다.
 
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/fbbfebef-4e3d-457f-b13c-960de547beb4)
@@ -39,31 +40,38 @@ URL : [011 - 무정무계획팀 노션 (notion.site)](https://teamsparta.notion.
 
 ### 4. 자원 채취
 자원의 종류로는 나무와 돌이 있습니다. 
+
 캐릭터의 공격으로 자원을 채취할 수 있습니다.
+
 채취한 자원은 인벤토리로 들어오게 됩니다.
 
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/9211dde5-566b-4ffd-bca2-12907b59d6f2)
 
 ### 5. 음식 채취
 음식의 종류로는 버섯이 있습니다.
+
 캐릭터의 몸과 닿으면 자동으로 채취됩니다.
+
 사용버튼 클릭 시 배고픔과 체력이 증가합니다.
 
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/ad18f432-2038-416f-92e1-e9c79ac64652)
 
 ### 5. 제작창 
 나무로 이루어진 제작대가 존재합니다.
+
 제작창은 제작대와 상호작용(키보드 E) 시 활성화됩니다.
 
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/61c4f559-6276-40ed-8363-a7c9c84ca2c2)
 
 ### 6. 버리기
 획득한 아이템은 버리기가 가능합니다.
+
 하나씩 버려지고 필드에 드랍되지 않습니다.
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/b245e6a6-aac8-4b7d-ad15-22a85690aa0c)
 
 ### 7. 게임오버
 체력이 0이 된다면  게임오버 화면이 활성화됩니다.
+
 게임오버 화면에서는 메인화면으로 되돌아가기와 다시하기 버튼이 있습니다.
 
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/7b2e81bc-9534-4b29-93c5-d2b2d0ff8341)
