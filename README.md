@@ -1,4 +1,4 @@
-# B11-Forest Survival
+# B11(강성호)-Forest Survival
  Chapter 3-3 Unity 게임개발 심화 개인과제입니다.
 <p>
 </p>
