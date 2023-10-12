@@ -1,10 +1,10 @@
-# B11(강성호)-Forest Survival
+# B07(강성호)-Forest Survival
  Chapter 3-3 Unity 게임개발 심화 개인과제입니다.
 <p>
 </p>
 
 ## 무정무계획팀 조 Team Notion
-URL : [011 - 무정무계획팀 노션 (notion.site)](https://teamsparta.notion.site/07-b2e6e4b62af14ed59cb65651acd9286f?pvs=25)
+URL : [07 - 무정무계획팀 노션 (notion.site)](https://teamsparta.notion.site/07-b2e6e4b62af14ed59cb65651acd9286f?pvs=25)
  ## :one: 프로젝트 소개
  플레이어가 숲에서 자원을 구하여 생존하는 게임입니다.
 ## :two: 개발기간
