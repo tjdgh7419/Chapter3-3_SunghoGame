@@ -64,10 +64,10 @@ URL : [011 - 무정무계획팀 노션 (notion.site)](https://teamsparta.notion.
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/61c4f559-6276-40ed-8363-a7c9c84ca2c2)
 
 ### 6. 버리기
-
 획득한 아이템은 버리기가 가능합니다.
 
 하나씩 버려지고 필드에 드랍되지 않습니다.
+
 ![Animation](https://github.com/tjdgh7419/DOWA_TeamProject/assets/70570791/b245e6a6-aac8-4b7d-ad15-22a85690aa0c)
 
 ### 7. 게임오버
